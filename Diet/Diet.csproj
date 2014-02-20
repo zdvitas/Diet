@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -45,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cl_dish.cs" />
+    <Compile Include="cl_eated.cs" />
+    <Compile Include="cl_product.cs" />
     <Compile Include="add_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +58,18 @@
       <DependentUpon>add_user.cs</DependentUpon>
     </Compile>
     <Compile Include="cl_user.cs" />
+    <Compile Include="eat_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eat_form.Designer.cs">
+      <DependentUpon>eat_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_add_dish.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_add_dish.Designer.cs">
+      <DependentUpon>form_add_dish.cs</DependentUpon>
+    </Compile>
     <Compile Include="form_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +82,17 @@
     <Compile Include="main_form.Designer.cs">
       <DependentUpon>main_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="mysql_connector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="add_user.resx">
       <DependentUpon>add_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eat_form.resx">
+      <DependentUpon>eat_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_add_dish.resx">
+      <DependentUpon>form_add_dish.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form_login.resx">
       <DependentUpon>form_login.cs</DependentUpon>
@@ -99,7 +124,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Image1.png" />
+    <None Include="Resources\spoon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knopka1-04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knopka2-14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knopka3-03.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

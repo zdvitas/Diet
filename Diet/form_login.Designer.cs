@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form_login));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_select = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(12, 38);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(231, 173);
+            this.listBox1.Size = new System.Drawing.Size(231, 186);
             this.listBox1.TabIndex = 0;
             // 
             // label1
@@ -55,47 +56,79 @@
             // 
             // btn_select
             // 
-            this.btn_select.Location = new System.Drawing.Point(275, 50);
+            this.btn_select.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btn_select.FlatAppearance.BorderSize = 0;
+            this.btn_select.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_select.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btn_select.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_select.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_select.Image = global::Diet.Properties.Resources.btn_1;
+            this.btn_select.Location = new System.Drawing.Point(261, 29);
             this.btn_select.Name = "btn_select";
-            this.btn_select.Size = new System.Drawing.Size(75, 23);
+            this.btn_select.Size = new System.Drawing.Size(102, 44);
             this.btn_select.TabIndex = 2;
             this.btn_select.Text = "Выбрать";
             this.btn_select.UseVisualStyleBackColor = true;
             this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
+            this.btn_select.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseDown);
+            this.btn_select.MouseLeave += new System.EventHandler(this.btn_select_MouseLeave);
+            this.btn_select.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseMove);
             // 
             // btn_new
             // 
-            this.btn_new.Location = new System.Drawing.Point(275, 88);
+            this.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_new.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_new.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_new.Image = ((System.Drawing.Image)(resources.GetObject("btn_new.Image")));
+            this.btn_new.Location = new System.Drawing.Point(261, 79);
             this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(75, 23);
+            this.btn_new.Size = new System.Drawing.Size(102, 44);
             this.btn_new.TabIndex = 3;
             this.btn_new.Text = "Новый";
             this.btn_new.UseVisualStyleBackColor = true;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
+            this.btn_new.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseDown);
+            this.btn_new.MouseLeave += new System.EventHandler(this.btn_select_MouseLeave);
+            this.btn_new.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseMove);
             // 
             // btn_change
             // 
-            this.btn_change.Location = new System.Drawing.Point(275, 127);
+            this.btn_change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_change.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_change.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_change.Image = ((System.Drawing.Image)(resources.GetObject("btn_change.Image")));
+            this.btn_change.Location = new System.Drawing.Point(261, 127);
             this.btn_change.Name = "btn_change";
-            this.btn_change.Size = new System.Drawing.Size(75, 23);
+            this.btn_change.Size = new System.Drawing.Size(102, 44);
             this.btn_change.TabIndex = 4;
             this.btn_change.Text = "Изменить";
             this.btn_change.UseVisualStyleBackColor = true;
+            this.btn_change.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseDown);
+            this.btn_change.MouseLeave += new System.EventHandler(this.btn_select_MouseLeave);
+            this.btn_change.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseMove);
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(275, 167);
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_close.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
+            this.btn_close.Location = new System.Drawing.Point(261, 175);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(75, 23);
+            this.btn_close.Size = new System.Drawing.Size(102, 44);
             this.btn_close.TabIndex = 5;
             this.btn_close.Text = "Закрыть";
             this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseDown);
+            this.btn_close.MouseLeave += new System.EventHandler(this.btn_select_MouseLeave);
+            this.btn_close.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_select_MouseMove);
             // 
             // form_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 215);
+            this.ClientSize = new System.Drawing.Size(388, 238);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_change);
             this.Controls.Add(this.btn_new);
