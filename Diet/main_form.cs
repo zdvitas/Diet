@@ -37,6 +37,26 @@ namespace Diet
             textBox1.Text = "AAAAAAAAAAA";
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            ShowKall();
+        }
+
+        private void ShowKall()
+        {
+            double a;
+            if (user.sex)
+            {
+                 a = 10 * user.ves + 6.25 * user.rost - 5 * user.age + 5;
+            } else
+            {
+                 a = 10 * user.ves + 6.25 * user.rost - 5 * user.age- 161;
+
+            }
+            textBox1.Text = a.ToString();
+
+        }
+
 
     }
 }

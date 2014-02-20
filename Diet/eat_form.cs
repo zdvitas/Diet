@@ -81,7 +81,20 @@ namespace Diet
         private void SyncTable()
         {
             // Сделать паше пересчет суммы всех параметров
-            //throw new NotImplementedException();
+            dataGridView1.Rows.Clear();
+            foreach(var tmp in eated)
+            {
+                string[] agrs = new string[6];
+                float k = tmp.mas / 100;
+                agrs[0] = tmp.product.name;
+                agrs[1] = tmp.mas.ToString();
+                agrs[2] = (tmp.product.fats * k).ToString();
+                agrs[3] = (tmp.product.proteins * k).ToString();
+                agrs[4] = (tmp.product.carbo * k).ToString();
+                agrs[5] = (tmp.product.kkals * k).ToString();
+                
+                dataGridView1.Rows.Add(agrs);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

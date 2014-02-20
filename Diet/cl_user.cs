@@ -19,6 +19,7 @@ namespace Diet
         public int sport = 1;
         public bool sex = true;
 
+
         public cl_user()
         {
             name = "Test user";
