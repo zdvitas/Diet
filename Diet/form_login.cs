@@ -16,8 +16,14 @@ namespace Diet
         public cl_user user = new cl_user(); // Объект класса пользователя
         public form_login()
         {
-            
+
             InitializeComponent();
+            SyncUsers();
+        }
+
+        public void SyncUsers()
+        {
+            listBox1.Items.Clear();
             var con = new mysql_connect();
             con.connect();
             string[] users = con.get_users();
@@ -30,6 +36,11 @@ namespace Diet
             // Вызывает окно добавления пользователя
             add_user add_form = new add_user(user);
             add_form.ShowDialog();
+           // while (!add_form.closed)
+            {
+
+            }
+            SyncUsers();
 
         }
 
@@ -44,18 +55,19 @@ namespace Diet
             con.connect();
 
             // авторизация пользователя
-            user = con.Auth_user(listBox1.SelectedItem.ToString(), "pass");
+            string pass = Microsoft.VisualBasic.Interaction.InputBox("Введите пароль", "Авторизация", "");
+            user = con.Auth_user(listBox1.SelectedItem.ToString(), pass);
 
             con.diconnect();
-            if ( user == null )
+            if (user == null)
             {
-                MessageBox.Show("Ошибка авторизации","ОШИБКА!!!",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ошибка авторизации", "ОШИБКА!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             main_form form = new main_form(user);
             form.Show();
             this.Hide();
-            
+
         }
 
 
@@ -75,6 +87,35 @@ namespace Diet
         {
             Button btn = (sender as Button);
             btn.Image = Properties.Resources.btn_3;
+        }
+
+        private void btn_change_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите пользователя!", "ОШИБКА!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            mysql_connect con = new mysql_connect();
+            con.connect();
+            string pass = Microsoft.VisualBasic.Interaction.InputBox("Введите пароль", "Авторизация", "");
+            // авторизация пользователя
+            user = con.Auth_user(listBox1.SelectedItem.ToString(), pass);
+
+            con.diconnect();
+
+            if (user == null)
+            {
+                MessageBox.Show("Ошибка авторизации", "ОШИБКА!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            add_user add_form = new add_user(user);
+            add_form.ShowDialog();
+            //while (!add_form.closed)
+            {
+
+            }
+            SyncUsers();
         }
     }
 }

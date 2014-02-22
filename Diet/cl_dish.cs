@@ -8,6 +8,7 @@ namespace Diet
 {
     public class cl_dish: cl_product
     {
+
         public cl_dish()
         {
 

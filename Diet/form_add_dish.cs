@@ -14,6 +14,8 @@ namespace Diet
     {
         List<cl_product> products;
 
+        List<cl_eated> dish_comp;
+
         public string[] ListToArray()
         {
             var rez = new string[products.Count];
@@ -64,6 +66,11 @@ namespace Diet
         private void text_mas_ValueChanged(object sender, EventArgs e)
         {
             CalcTotal();
+        }
+
+        private void btn_select_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

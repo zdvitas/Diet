@@ -47,8 +47,17 @@
             this.label_fats = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.col_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_mas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_prot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_carbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_kkal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.text_mas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -171,6 +180,7 @@
             this.btn_select.TabIndex = 10;
             this.btn_select.Text = "Добавить";
             this.btn_select.UseVisualStyleBackColor = true;
+            this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
             // 
             // text_kkal
             // 
@@ -257,19 +267,92 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Location = new System.Drawing.Point(0, 381);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1034, 102);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_name,
+            this.col_mas,
+            this.col_fats,
+            this.col_prot,
+            this.col_carbo,
+            this.col_kkal});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 154);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(1034, 227);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // col_name
+            // 
+            this.col_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_name.HeaderText = "Название";
+            this.col_name.Name = "col_name";
+            // 
+            // col_mas
+            // 
+            this.col_mas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.col_mas.HeaderText = "Вес";
+            this.col_mas.Name = "col_mas";
+            this.col_mas.Width = 57;
+            // 
+            // col_fats
+            // 
+            this.col_fats.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.col_fats.HeaderText = "Жиры";
+            this.col_fats.Name = "col_fats";
+            this.col_fats.Width = 72;
+            // 
+            // col_prot
+            // 
+            this.col_prot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.col_prot.HeaderText = "Белки";
+            this.col_prot.Name = "col_prot";
+            this.col_prot.Width = 73;
+            // 
+            // col_carbo
+            // 
+            this.col_carbo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.col_carbo.HeaderText = "Углеводы";
+            this.col_carbo.Name = "col_carbo";
+            this.col_carbo.Width = 96;
+            // 
+            // col_kkal
+            // 
+            this.col_kkal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.col_kkal.HeaderText = "Ккал";
+            this.col_kkal.Name = "col_kkal";
+            this.col_kkal.Width = 65;
+            // 
             // form_add_dish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1034, 483);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "form_add_dish";
             this.Text = "Добавить рецепт";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.text_mas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,6 +378,14 @@
         private System.Windows.Forms.Label label_fats;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_mas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_prot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_carbo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_kkal;
 
     }
 }

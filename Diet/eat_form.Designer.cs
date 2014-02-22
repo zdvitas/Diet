@@ -344,12 +344,14 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(754, 242);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // col_name
             // 
             this.col_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_name.HeaderText = "Название";
             this.col_name.Name = "col_name";
+            this.col_name.ReadOnly = true;
             // 
             // col_mas
             // 
@@ -363,6 +365,7 @@
             this.col_fats.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.col_fats.HeaderText = "Жиры";
             this.col_fats.Name = "col_fats";
+            this.col_fats.ReadOnly = true;
             this.col_fats.Width = 72;
             // 
             // col_prot
@@ -370,6 +373,7 @@
             this.col_prot.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.col_prot.HeaderText = "Белки";
             this.col_prot.Name = "col_prot";
+            this.col_prot.ReadOnly = true;
             this.col_prot.Width = 73;
             // 
             // col_carbo
@@ -377,6 +381,7 @@
             this.col_carbo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.col_carbo.HeaderText = "Углеводы";
             this.col_carbo.Name = "col_carbo";
+            this.col_carbo.ReadOnly = true;
             this.col_carbo.Width = 96;
             // 
             // col_kkal
@@ -384,6 +389,7 @@
             this.col_kkal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.col_kkal.HeaderText = "Ккал";
             this.col_kkal.Name = "col_kkal";
+            this.col_kkal.ReadOnly = true;
             this.col_kkal.Width = 65;
             // 
             // eat_form
@@ -433,13 +439,13 @@
         private System.Windows.Forms.TextBox text_prot_total;
         private System.Windows.Forms.TextBox text_fats_total;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_add_dish;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_mas;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fats;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_prot;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_carbo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_kkal;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_add_dish;
     }
 }

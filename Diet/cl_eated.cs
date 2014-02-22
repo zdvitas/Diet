@@ -12,6 +12,7 @@ namespace Diet
         public cl_product product;
         public cl_user user;
         public cl_dish dish;
+        public int kkal;
         public float mas;
         
         public cl_eated(cl_product prod , cl_user usr , float mas)
@@ -35,18 +36,19 @@ namespace Diet
         {
             string rez= "";
             // Так муторно, потому что нет стандартного формата вывода времени, который нам подходит
-            string date = DateTime.Now.ToString("s").Replace("T", " ");
+
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
+            string time = DateTime.Now.ToShortTimeString();
             
             
             if(dish == null)
             {
-                rez = "INSERT INTO eated (`user_id`, `product_id`,  `mas`, `date`) VALUES ( ";
-                rez += "'" + user.id.ToString() + "', '"+product.id.ToString()+"' , '"+mas.ToString()+"' ,'" +date+ "');";
+                rez = "INSERT INTO eated (`user_id`, `product_id`,  `mas`, `date` , `time`) VALUES ( ";
+                rez += "'" + user.id.ToString() + "', '"+product.id.ToString()+"' , '"+mas.ToString()+"' ,'" +date+ "' ,'"+ time + "')";
             } else
             {
                 rez = "INSERT INTO eated (`user_id`,  `dish_id`, `mas`, `date`) VALUES ( ";
-                rez += "'" + user.id.ToString() + "', '" + dish.id.ToString() + "' , '" + mas.ToString() + "' ,'" + date + "');";
-
+                rez += "'" + user.id.ToString() + "', '" + dish.id.ToString()+"' , '"+mas.ToString()+"' ,'" +date+ "' ,'"+ time + "')";
             }
 
             return rez;

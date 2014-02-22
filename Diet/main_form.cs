@@ -19,6 +19,7 @@ namespace Diet
             this.user = user;
             InitializeComponent();
             label_name.Text = user.name;
+            ShowKall();
         }
 
         private void main_form_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,10 +33,7 @@ namespace Diet
             form.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "AAAAAAAAAAA";
-        }
+
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -55,6 +53,11 @@ namespace Diet
             }
             textBox1.Text = a.ToString();
 
+        }
+
+        private void main_form_Activated(object sender, EventArgs e)
+        {
+            ShowKall();
         }
 
 

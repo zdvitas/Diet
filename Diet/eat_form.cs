@@ -29,7 +29,7 @@ namespace Diet
             return rez;
 
         }
-        public eat_form(cl_user user)
+        public eat_form(cl_user user  )
         {
 
             InitializeComponent();
@@ -101,17 +101,40 @@ namespace Diet
         {
             var con = new mysql_connect();
             con.connect();
-            foreach(var tmp in eated)
+            foreach (var tmp in eated)
             {
                 con.Post_Query(tmp.make_post_query());
             }
            // 
             con.diconnect();
+            MessageBox.Show("Мммм.. Вкусно.");
+            this.Close();
         }
 
         private void btn_add_dish_Click(object sender, EventArgs e)
         {
+            form_add_dish add_dish = new form_add_dish();
+            add_dish.Show();
+        }
 
+        public void RecountProduct(int index, int mas)
+        {
+           // var k = mas / eated[index].mas;
+            eated[index].mas = mas;
+            SyncTable();
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int mas = int.Parse((string)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                RecountProduct(e.RowIndex, mas);
+            }
+            catch
+            {
+
+            }
         }
 
 
